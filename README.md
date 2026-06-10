@@ -347,7 +347,297 @@ function j(e) {
 
 ---
 
-## 十、配置文件说明
+## 十、完整依赖清单
+
+### 10.1 直接依赖（dependencies）
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `@modelcontextprotocol/sdk` | 1.29.0 | MCP 协议 SDK（含 Hono/Express 服务端支持） |
+| `zod` | 3.25.76 | TypeScript-first Schema 声明与校验库 |
+| `puppeteer-core` | 23.11.1 | Chrome 浏览器自动化控制（高优先级 CDP API） |
+| `js-beautify` | 1.15.4 | JS/HTML/CSS 代码美化格式化 |
+| `acorn` | 8.16.0 | ECMAScript 语法解析器 |
+| `acorn-walk` | 8.3.5 | ECMAScript AST 遍历器 |
+| `crypto-js` | 4.2.0 | 加密算法库（AES/DES/MD5/SHA/RSA 等） |
+| `node-forge` | 1.4.0 | JS 加密实现（TLS/X.509/RSA/AES 等） |
+| `mustache` | 4.2.0 | 无逻辑 Mustache 模板引擎 |
+
+### 10.2 开发依赖（devDependencies）
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `typescript` | 5.9.3 | TypeScript 编译器 |
+| `tsx` | 4.22.4 | TypeScript 直接执行工具（基于 esbuild） |
+| `@types/node` | 22.19.20 | Node.js 类型定义 |
+| `@types/crypto-js` | 4.2.2 | crypto-js 类型定义 |
+| `@types/js-beautify` | 1.14.3 | js-beautify 类型定义 |
+| `@types/node-forge` | 1.3.14 | node-forge 类型定义 |
+| `@types/mustache` | 4.2.6 | mustache 类型定义 |
+| `@types/yauzl` | 2.10.3 | yauzl 类型定义 |
+
+### 10.3 间接依赖（传递依赖）
+
+#### MCP / 网络通信相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `express` | 5.2.1 | HTTP Web 框架（MCP SDK 内部使用） |
+| `hono` | 4.12.25 | 轻量 Web 框架（MCP SDK 可选传输） |
+| `@hono/node-server` | 1.19.14 | Hono Node.js 适配器 |
+| `ws` | 8.21.0 | WebSocket 客户端/服务端 |
+| `eventsource` | 2.0.2 | SSE（Server-Sent Events）客户端 |
+| `eventsource-parser` | 3.0.2 | SSE 协议解析器 |
+| `zod-to-json-schema` | 3.25.2 | Zod Schema 转 JSON Schema |
+| `jose` | 6.2.3 | JWT/JWS/JWE 实现（OAuth 支持） |
+| `pkce-challenge` | 5.0.1 | PKCE 挑战对生成/验证 |
+| `cors` | 2.8.5 | HTTP CORS 中间件 |
+| `body-parser` | 2.2.2 | HTTP 请求体解析中间件 |
+| `router` | 2.2.0 | 简易中间件路由 |
+| `express-rate-limit` | 8.2.1 | Express 请求限速 |
+
+#### Puppeteer / 浏览器自动化相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `chromium-bidi` | 0.11.0 | WebDriver BiDi 协议实现（Puppeteer 内部） |
+| `@puppeteer/browsers` | 2.6.1 | 浏览器下载与启动工具 |
+| `devtools-protocol` | 0.0.1452057 | Chrome DevTools Protocol 类型定义 |
+| `basic-ftp` | 5.3.1 | FTP 客户端（浏览器下载） |
+| `extract-zip` | 2.0.1 | ZIP 解压工具 |
+| `yauzl` | 2.10.0 | ZIP 文件解析库 |
+| `progress` | 2.0.3 | 下载进度条 |
+| `mitt` | 3.0.1 | 轻量事件发射器 |
+| `typed-query-selector` | 2.12.2 | 类型化 querySelector |
+
+#### 代理 / 网络相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `proxy-agent` | 6.5.0 | 代理协议映射 Agent |
+| `http-proxy-agent` | 7.0.2 | HTTP 代理 Agent |
+| `https-proxy-agent` | 7.0.6 | HTTPS 代理 Agent |
+| `socks-proxy-agent` | 8.0.5 | SOCKS 代理 Agent |
+| `socks` | 2.8.9 | SOCKS v4/v4a/v5 客户端 |
+| `pac-proxy-agent` | 7.2.0 | PAC 文件代理 Agent |
+| `pac-resolver` | 7.0.1 | PAC 文件解析器 |
+| `proxy-from-env` | 1.1.0 | 从环境变量获取代理配置 |
+| `netmask` | 2.1.1 | IP 网段解析 |
+| `ip-address` | 10.2.0 | IPv4/IPv6 地址解析 |
+| `smart-buffer` | 4.2.0 | 智能 Buffer 封装 |
+| `agent-base` | 7.1.4 | HTTP Agent 基类 |
+| `data-uri-to-buffer` | 6.0.2 | Data URI 转 Buffer |
+| `get-uri` | 6.0.5 | URI 转可读流 |
+
+#### 构建工具
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `esbuild` | 0.28.0 | 极速 JS 打包器（tsx 内部使用） |
+| `@esbuild/win32-x64` | 0.28.0 | esbuild Windows 64 位二进制 |
+
+#### 工具函数 / 通用库
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `debug` | 4.4.1 | 调试日志工具 |
+| `ms` | 2.1.3 | 毫秒转换工具 |
+| `semver` | 7.8.4 | 语义化版本解析 |
+| `glob` | 10.4.5 | Glob 模式匹配 |
+| `minimatch` | 9.0.9 | Glob 匹配器 |
+| `minipass` | 7.1.3 | 最小 PassThrough 流实现 |
+| `lru-cache` | 10.4.3 | LRU 缓存 |
+| `signal-exit` | 4.1.0 | 进程退出信号处理 |
+| `once` | 1.4.0 | 函数单次执行 |
+| `pump` | 3.0.4 | 管道流连接 |
+| `wrappy` | 1.0.2 | 回调包装工具 |
+| `which` | 2.0.2 | 可执行文件查找（类 Unix which） |
+| `path-key` | 3.1.1 | 跨平台 PATH 键获取 |
+| `cross-spawn` | 7.0.6 | 跨平台 spawn |
+| `shebang-command` | 2.0.0 | shebang 命令提取 |
+| `shebang-regex` | 3.0.0 | shebang 正则匹配 |
+| `isexe` | 2.0.0 | 可执行文件检测 |
+| `foreground-child` | 3.3.1 | 前台子进程管理 |
+| `package-json-from-dist` | 1.0.1 | 从 dist 加载 package.json |
+| `path-scurry` | 1.11.1 | 高效路径遍历 |
+| `jackspeak` | 3.4.3 | 严格参数解析器 |
+| `require-from-string` | 2.0.2 | 从字符串加载模块 |
+| `require-directory` | 2.1.1 | 递归加载目录模块 |
+
+#### HTTP / Web 基础
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `accepts` | 2.0.0 | HTTP 内容协商 |
+| `negotiator` | 1.0.0 | HTTP 内容协商底层 |
+| `content-type` | 1.0.5 | Content-Type 解析 |
+| `content-disposition` | 1.1.0 | Content-Disposition 解析 |
+| `type-is` | 2.1.0 | 请求类型推断 |
+| `media-typer` | 1.1.0 | RFC 6838 媒体类型解析 |
+| `mime-types` | 3.0.2 | MIME 类型工具 |
+| `mime-db` | 1.54.0 | MIME 类型数据库 |
+| `cookie` | 0.7.2 | Cookie 解析与序列化 |
+| `cookie-signature` | 1.2.2 | Cookie 签名 |
+| `etag` | 1.8.1 | ETag 生成 |
+| `fresh` | 2.0.0 | HTTP 缓存新鲜度检查 |
+| `vary` | 1.1.2 | Vary 头操作 |
+| `send` | 1.2.1 | 静态文件发送 |
+| `serve-static` | 2.2.1 | 静态文件服务 |
+| `range-parser` | 1.2.1 | Range 头解析 |
+| `parseurl` | 1.3.3 | URL 解析（带缓存） |
+| `encodeurl` | 2.0.0 | URL 编码 |
+| `escape-html` | 1.0.3 | HTML 转义 |
+| `on-finished` | 2.4.1 | 请求完成回调 |
+| `ee-first` | 1.1.1 | 事件优先触发 |
+| `unpipe` | 1.0.0 | 解除流管道 |
+| `raw-body` | 3.0.2 | 原始请求体获取 |
+| `bytes` | 3.1.2 | 字节字符串转换 |
+| `statuses` | 2.0.2 | HTTP 状态码工具 |
+| `http-errors` | 2.0.1 | HTTP 错误对象 |
+| `toidentifier` | 1.0.1 | 字符串转 JS 标识符 |
+| `depd` | 2.0.0 | 废弃警告工具 |
+| `proxy-addr` | 2.0.7 | 代理地址判定 |
+| `forwarded` | 0.2.0 | Forwarded 头解析 |
+| `ipaddr.js` | 1.9.1 | IPv4/IPv6 操作库 |
+| `merge-descriptors` | 2.0.0 | 属性描述符合并 |
+| `object-inspect` | 1.13.4 | 对象字符串表示 |
+| `path-to-regexp` | 8.4.2 | Express 风格路径转正则 |
+| `qs` | 6.15.2 | 查询字符串解析（支持嵌套） |
+| `iconv-lite` | 0.7.2 | 字符编码转换 |
+| `safer-buffer` | 2.1.2 | 安全 Buffer polyfill |
+
+#### JS 解析 / AST 相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `esprima` | 4.0.1 | ECMAScript 解析器 |
+| `escodegen` | 2.1.0 | ECMAScript 代码生成 |
+| `estraverse` | 5.3.0 | ECMAScript AST 遍历 |
+| `esutils` | 2.0.3 | ECMAScript 工具函数 |
+| `ast-types` | 0.13.4 | Mozilla JS Parser API 实现 |
+| `source-map` | 0.6.1 | Source Map 生成与消费 |
+
+#### 加密 / 编码相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `base64-js` | 1.5.1 | 纯 JS Base64 编解码 |
+| `ieee754` | 1.2.1 | IEEE754 浮点数读写 |
+| `buffer` | 5.7.1 | 浏览器 Buffer API |
+| `buffer-crc32` | 0.2.13 | CRC32 算法 |
+
+#### 数据校验 / Schema
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `ajv` | 8.20.0 | JSON Schema 校验器 |
+| `ajv-formats` | 3.0.1 | Ajv 格式校验扩展 |
+| `json-schema-traverse` | 1.0.0 | JSON Schema 遍历 |
+| `json-schema-typed` | 8.0.2 | JSON Schema TS 定义 |
+| `fast-deep-equal` | 3.1.3 | 深度相等比较 |
+| `fast-uri` | 3.1.0 | 快速 URI 解析 |
+
+#### 流处理 / 解压
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `streamx` | 2.27.0 | 改进的 Node.js 流实现 |
+| `tar-stream` | 3.2.0 | 流式 tar 解析/生成 |
+| `tar-fs` | 3.1.2 | tar 文件系统绑定 |
+| `teex` | 1.0.1 | 可读流多路复用 |
+| `text-decoder` | 1.2.7 | 流式文本解码器 |
+| `b4a` | 1.8.1 | Buffer/TypedArray 桥接 |
+| `unbzip2-stream` | 1.4.3 | bzip2 流式解压 |
+| `end-of-stream` | 1.4.5 | 流结束检测 |
+| `get-stream` | 5.2.0 | 流转换为字符串/Buffer |
+| `bare-stream` | 2.13.1 | Bare 运行时流实现 |
+| `through` | 2.3.8 | 简易流构造 |
+| `fast-fifo` | 1.3.2 | 快速 FIFO 队列 |
+
+#### 终端 / CLI 相关
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `yargs` | 17.7.2 | 命令行参数解析 |
+| `yargs-parser` | 21.1.1 | yargs 参数解析器 |
+| `y18n` | 5.0.8 | 国际化库（yargs 使用） |
+| `cliui` | 8.0.1 | CLI 多列输出 |
+| `wrap-ansi` | 7.0.0 / 8.1.0 | ANSI 终端文本换行 |
+| `ansi-regex` | 6.2.2 | ANSI 转义码正则 |
+| `ansi-styles` | 6.2.3 | ANSI 终端样式 |
+| `color-convert` | 2.0.1 | 颜色格式转换 |
+| `color-name` | 1.1.4 | 颜色名称映射 |
+| `string-width` | 4.2.3 / 5.1.2 | 字符串显示宽度 |
+| `strip-ansi` | 6.0.1 / 7.2.0 | 去除 ANSI 转义码 |
+| `is-fullwidth-code-point` | 3.0.0 | 全角字符检测 |
+| `eastasianwidth` | 0.2.0 | 东亚字符宽度 |
+| `emoji-regex` | 10.4.0 | Emoji 正则 |
+
+#### 配置 / INI / EditorConfig
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `commander` | 10.0.1 | Node.js CLI 命令框架 |
+| `editorconfig` | 1.0.4 | EditorConfig 解析 |
+| `@one-ini/wasm` | 0.1.1 | INI 文件 WASM 解析 |
+| `ini` | 1.3.8 | INI 编解码 |
+| `config-chain` | 1.1.13 | 配置链管理 |
+| `proto-list` | 1.2.4 | 原型链工具 |
+| `nopt` | 7.2.1 | Node 选项解析 |
+| `abbrev` | 2.0.0 | 字符串缩写生成 |
+
+#### 对象 / 函数工具
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `has-symbols` | 1.1.0 | Symbol 支持检测 |
+| `hasown` | 2.0.4 | 安全 hasOwnProperty |
+| `gopd` | 1.2.0 | getOwnPropertyDescriptor |
+| `call-bind-apply-helpers` | 1.0.2 | call/apply 辅助 |
+| `call-bound` | 1.0.4 | 安全绑定调用 |
+| `es-define-property` | 1.0.1 | Object.defineProperty 安全版 |
+| `es-errors` | 1.3.0 | ES 错误类型 |
+| `es-object-atoms` | 1.1.1 | ES 对象原子操作 |
+| `math-intrinsics` | 1.1.0 | Math 内部函数 |
+| `side-channel` | 1.1.1 | 侧信道存储（WeakMap） |
+| `side-channel-map` | 1.0.1 | 侧信道 Map 实现 |
+| `side-channel-list` | 1.0.1 | 侧信道链表实现 |
+| `side-channel-weakmap` | 1.0.2 | 侧信道 WeakMap 实现 |
+| `dunder-proto` | 1.0.1 | \_\_proto\_\_ 安全访问 |
+| `get-intrinsic` | 1.3.0 | JS 内置对象获取 |
+| `get-proto` | 1.0.1 | 原型获取 |
+| `object-assign` | 4.1.1 | Object.assign polyfill |
+| `setprototypeof` | 1.2.0 | setPrototypeOf polyfill |
+| `inherits` | 2.0.4 | 继承工具 |
+| `function-bind` | 1.1.2 | Function.prototype.bind |
+
+#### Bare 运行时（Puppeteer 可选依赖）
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `bare-events` | 2.9.1 | Bare 事件发射器 |
+| `bare-fs` | 4.7.2 | Bare 文件系统操作 |
+| `bare-os` | 3.9.1 | Bare 操作系统工具 |
+| `bare-path` | 3.0.1 | Bare 路径操作 |
+| `bare-url` | 2.4.5 | Bare URL 实现 |
+| `events-universal` | 1.0.1 | 通用事件模块 |
+
+#### 其他
+
+| 包名 | 版本 | 说明 |
+|------|------|------|
+| `balanced-match` | 1.0.2 | 平衡括号匹配 |
+| `brace-expansion` | 2.1.1 | 大括号展开（sh/bash 风格） |
+| `tslib` | 2.8.1 | TypeScript 运行时辅助库 |
+| `undici-types` | 6.21.0 | Undici 类型定义 |
+| `js-cookie` | 3.0.8 | 轻量 Cookie 操作库 |
+| `@tootallnate/quickjs-emscripten` | 0.23.0 | QuickJS WASM 绑定 |
+| `@isaacs/cliui` | 8.0.2 | CLI 多列输出（isaacs 版） |
+| `@pkgjs/parseargs` | 0.11.0 | util.parseArgs polyfill |
+
+---
+
+## 十一、配置文件说明
 
 ### mcp-config.json
 
@@ -386,7 +676,7 @@ function j(e) {
 
 ---
 
-## 十一、注意事项
+## 十二、注意事项
 
 1. **首次使用必须调用 `browser_launch`**：所有需要浏览器操作的工具都依赖浏览器实例，必须先启动
 2. **Chrome 路径配置**：确保 `CHROME_PATH` 环境变量指向正确的 Chrome 安装路径
@@ -397,9 +687,10 @@ function j(e) {
 
 ---
 
-## 十二、许可证
+## 十三、许可证
 
 本项目仅供学习和安全研究使用，请遵守相关法律法规。
+
 
 ## 十三、测试用例
 

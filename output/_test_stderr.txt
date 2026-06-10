@@ -1,0 +1,8 @@
+[INFO] MCP Server created: js-reverse-mcp v1.0.0
+[INFO] Navigation tools registered (5 tools)
+[INFO] Network tools registered (6 tools)
+[INFO] Source analysis tools registered (6 tools)
+[INFO] Runtime tools registered (5 tools)
+[INFO] Crypto detection tools registered (5 tools)
+[INFO] Script generation tools registered (4 tools)
+[INFO] JS Reverse MCP Server running on stdio

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "js-reverse": {
+      "command": "node",
+      "args": ["e:\\Qwen\\build\\index.js"],
+      "env": {
+        "CHROME_PATH": "C:\\Users\\fangz\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
+        "OUTPUT_DIR": "e:\\Qwen\\output"
+      }
+    }
+  }
+}
